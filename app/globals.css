@@ -1,0 +1,242 @@
+/* frontend/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* MODO CLARO (Suas cores) */
+    --background: 0 0% 100%; /* #FFFFFF */
+    --foreground: 0 0% 23.5%; /* #3C3C3C */
+
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 0 0% 23.5%; /* #3C3C3C */
+
+    --popover: 0 0% 100%; /* #FFFFFF */
+    --popover-foreground: 0 0% 23.5%; /* #3C3C3C */
+
+    --primary: 148 60.5% 24.1%; /* #176534 */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --secondary: 30 100% 62.4%; /* #FF9F3F */
+    --secondary-foreground: 0 0% 23.5%; /* #3C3C3C */
+
+    --muted: 0 0% 97.3%; /* #F8F8F8 */
+    --muted-foreground: 0 0% 85.1%; /* #D9D9D9 */
+
+    --accent: 0 0% 97.3%; /* #F8F8F8 */
+    --accent-foreground: 0 0% 23.5%; /* #3C3C3C */
+
+    --destructive: 0 84.2% 60.2%; /* Vermelho Padrão */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 93.7%; /* #EFEFEF */
+    --input: 0 0% 93.7%; /* #EFEFEF */
+    --ring: 148 60.5% 24.1%; /* #176534 (cor primária para foco) */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* MODO ESCURO (Inversão) */
+    --background: 0 0% 0%; /* #000000 */
+    --foreground: 0 0% 99.6%; /* #FEFEFE (Quase Branco) */
+
+    --card: 0 0% 0%; /* #000000 */
+    --card-foreground: 0 0% 99.6%; /* #FEFEFE */
+
+    --popover: 0 0% 0%; /* #000000 */
+    --popover-foreground: 0 0% 99.6%; /* #FEFEFE */
+
+    --primary: 148 60.5% 24.1%; /* #176534 (Pode precisar de ajuste) */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF */
+
+    --secondary: 30 100% 62.4%; /* #FF9F3F */
+    --secondary-foreground: 0 0% 23.5%; /* #3C3C3C */
+
+    --muted: 0 0% 23.5%; /* #3C3C3C */
+    --muted-foreground: 0 0% 85.1%; /* #D9D9D9 */
+
+    --accent: 0 0% 23.5%; /* #3C3C3C */
+    --accent-foreground: 0 0% 99.6%; /* #FEFEFE */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 23.5%; /* #3C3C3C */
+    --input: 0 0% 23.5%; /* #3C3C3C */
+    --ring: 30 100% 62.4%; /* #FF9F3F (Laranja para foco) */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Isso ativa o anti-aliasing para fontes */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* ============================================
+   ANIMAÇÕES CUSTOMIZADAS
+   ============================================ */
+
+@layer utilities {
+  /* Fade In - Entrada com suave movimento vertical */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-fade-in-delay-100 {
+    animation: fadeIn 0.6s ease-out 0.1s forwards;
+  }
+
+  .animate-fade-in-delay-200 {
+    animation: fadeIn 0.6s ease-out 0.2s forwards;
+  }
+
+  .animate-fade-in-delay-300 {
+    animation: fadeIn 0.6s ease-out 0.3s forwards;
+  }
+
+  /* Slide In - Entrada lateral */
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.5s ease-out forwards;
+  }
+
+  /* Bounce - Efeito de pulo suave */
+  @keyframes bounce-soft {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .animate-bounce-soft {
+    animation: bounce-soft 2s infinite;
+  }
+
+  /* Scale - Zoom suave */
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.4s ease-out forwards;
+  }
+
+  /* Pulse - Pulsação para chamar atenção */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(255, 159, 63, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(255, 159, 63, 0);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+
+  /* Underline Animation - Sublinhado animado */
+  @keyframes underlineExpand {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  .animate-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .animate-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    background-color: hsl(30, 100%, 62.4%); /* Cor secundária */
+    animation: underlineExpand 0.4s ease-out forwards;
+  }
+}
+
+/* ============================================
+   VARIAÇÕES DE TRANSIÇÃO
+   ============================================ */
+
+@layer components {
+  /* Transição suave para todos os elementos interativos */
+  .transition-smooth {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  /* Hover effect padrão para botões/links */
+  .hover-lift {
+    @apply transform transition-transform hover:scale-105 duration-200;
+  }
+
+  /* Grupo de animação */
+  .animation-group-stagger {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animation-group-stagger:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .animation-group-stagger:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .animation-group-stagger:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+
+  .animation-group-stagger:nth-child(4) {
+    animation-delay: 0.3s;
+  }
+
+  .animation-group-stagger:nth-child(5) {
+    animation-delay: 0.4s;
+  }
+}
