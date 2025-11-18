@@ -1,10 +1,10 @@
 // frontend/components/layout/footer.tsx
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { Container } from '@/components/ui/container';
-import { mockFooter } from '@/lib/mock-data';
+import Image from "next/image";
+import Link from "next/link";
+import { Container } from "@/components/ui/container";
+import { mockFooter } from "@/lib/mock-data";
 
 interface FooterData {
   id: number;
@@ -20,19 +20,19 @@ interface FooterData {
 // ✅ REDES SOCIAIS HARDCODED (Cliente não muda)
 const SOCIAL_MEDIA = [
   {
-    platform: 'instagram',
-    username: 'armandopremoldados',
-    url: 'https://instagram.com/armandopremoldados',
+    platform: "instagram",
+    username: "armandopremoldados",
+    url: "https://instagram.com/armandopremoldados",
   },
   {
-    platform: 'facebook',
-    username: 'armandopremoldados',
-    url: 'https://facebook.com/armandopremoldados',
+    platform: "facebook",
+    username: "armandopremoldados",
+    url: "https://facebook.com/armandopremoldados",
   },
   {
-    platform: 'whatsapp',
-    username: '+55 41 99999-9999',
-    url: 'https://wa.me/5541999999999',
+    platform: "whatsapp",
+    username: "(51) 3654-2018",
+    url: "https://api.whatsapp.com/send?phone=555136542018&text=Ol%C3%A1,%20vim%20pelas%20Redes%20Sociais",
   },
 ];
 
@@ -48,7 +48,6 @@ export function Footer() {
       <Container>
         {/* Grid 4 Colunas */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-          
           {/* Coluna 1: Logo + Slogan */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
@@ -59,9 +58,7 @@ export function Footer() {
                 height={119}
               />
             </Link>
-            <p className="text-sm text-[#235942]">
-              {footer.slogan}
-            </p>
+            <p className="text-sm text-[#235942]">{footer.slogan}</p>
           </div>
 
           {/* Coluna 2: Horário */}
@@ -100,7 +97,11 @@ export function Footer() {
                   href={`mailto:${footer.email_address}`}
                   className="flex items-center gap-3 text-sm text-[#235942] hover:text-[#FF9F3F] transition mt-4"
                 >
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
@@ -153,7 +154,7 @@ function SocialIcon({ platform }: { platform: string }): React.ReactNode {
     ),
     whatsapp: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a6.963 6.963 0 00-6.963 6.964c0 1.528.418 3.018 1.212 4.323L3.86 21.144l4.563-1.196a6.963 6.963 0 005.693 2.791h.005c3.837 0 6.964-3.127 6.964-6.964 0-1.859-.72-3.606-2.028-4.914-1.308-1.308-3.055-2.028-4.914-2.028M23.5 12c0 6.351-5.149 11.5-11.5 11.5S.5 18.351.5 12 5.649.5 12 .5 23.5 5.649 23.5 12Z" />
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.561 1.078 3.641L6.332 17.82l4.308-1.429c1.046.574 2.228.904 3.459.905 3.18 0 5.767-2.587 5.768-5.766.001-1.583-.623-3.073-1.757-4.206-1.134-1.134-2.623-1.756-4.206-1.758l-.002.003zm3.415 13.304l-.999-.329c-1.15.896-2.529 1.421-3.992 1.422-2.667-.025-4.834-2.191-4.858-4.857-.02-1.289.379-2.521 1.041-3.56l-.52-1.782 1.974.654c.864-.745 2.002-1.187 3.361-1.191 2.667.025 4.834 2.191 4.858 4.857.02 1.289-.379 2.521-1.041 3.56l.52 1.782-1.744-.576z" />
       </svg>
     ),
     linkedin: (
