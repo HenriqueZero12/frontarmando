@@ -68,7 +68,7 @@ export default function QuemSomosPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Texto */}
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-slate-900">
+              <h2 className="text-3xl font-bold text-[#235942]">
                 {data.section_title}
               </h2>
               <p className="text-slate-700 leading-relaxed whitespace-pre-wrap text-lg">
@@ -78,7 +78,7 @@ export default function QuemSomosPage() {
                 href={data.whatsapp_link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded transition"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-[#235942] hover:bg-[#ff9f3f] text-white font-semibold rounded transition"
               >
                 <MessageCircle size={20} />
                 {data.cta_text}
