@@ -31,8 +31,8 @@ const SOCIAL_MEDIA = [
   },
   {
     platform: "whatsapp",
-    username: "(51) 3654-2018",
-    url: "https://api.whatsapp.com/send?phone=555136542018&text=Ol%C3%A1,%20vim%20pelas%20Redes%20Sociais",
+    username: "(51) 8047-2613",
+    url: "https://api.whatsapp.com/send?phone=555180472613&text=Ol%C3%A1,%20vim%20pelas%20Redes%20Sociais",
   },
 ];
 
